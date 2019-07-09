@@ -2,7 +2,7 @@ from flask import Flask, request, jsonify
 from bs4 import BeautifulSoup
 import requests
 import config
-import utils
+import best_offer
 
 """Create and configure an instance of the Flask application."""
 app = Flask(__name__)
@@ -13,7 +13,7 @@ def search():
     amzn = requests.get(config.get_amazon_url_for(request.args.get('q', '')))
     ml_html = BeautifulSoup(ml.text, 'html.parser')
     amzn_html = BeautifulSoup(amzn.text, 'html.parser')
-    results = utils.gather_results(ml_html, amzn_html)
+    results = best_offer.gather_results(ml_html, amzn_html)
 
     return jsonify({"results": results, "status_code": 200})
 
