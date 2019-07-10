@@ -34,19 +34,28 @@ def search(container, rules):
         if len(attrs):
             attr, value = attrs[0].split('=')
             rule = rules[0].replace('[{}]'.format(attrs[0]), '')
-            parent = container.find(rule, **{attr: value})
+            parent = container.find(rule, **{attr: value.strip('\"')})
         else:
             parent = container.find(rules[0])
 
         return search(parent, '.'.join(rules[1:]))
 
-    return container.find(rules[0])
+    rule = rules[0]
+    attrs = re.findall('\[(.*?)\]', rule)
+    if len(attrs):
+        attr, value = attrs[0].split('=')
+        rule = rules[0].replace('[{}]'.format(attrs[0]), '')
+        return container.find(rule, **{attr: value.strip('\"')})
+    else:
+        return container.find(rules[0])
 
 
 def parse_ml_item(container):
     img = search(container, 'ul.li.img')
+    price = search(container, 'div[class_="item__info"].div[class_="item__price"].span[class_="price__fraction"]')
     return {
         'name': img.get('title', img.get('alt', '')),
-        'img': img.get('src', '')
+        'img': img.get('src', img.get('data-src', 'no-valid-img')),
+        'price': '${}'.format(price.text)
     }
 
