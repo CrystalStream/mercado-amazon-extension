@@ -19,15 +19,19 @@ def get_amzn_products(html):
     product_list = html.find('div', class_="s-result-list")
     if product_list:
         for item in product_list.find_all('div', attrs={'data-asin': True}):
-            items.append(str(item))
+            items.append(parse_amzn_item(item))
             
     return items
 
-def gather_results(ml, amzn=None):
+def gather_results(ml, amzn):
     return [get_ml_products(ml), get_amzn_products(amzn)]
 
 def search(container, rules):
     rules = rules.split('.')
+
+    if container is None:
+        return None
+    
     while len(rules) > 1:
         rule = rules[0]
         attrs = re.findall('\[(.*?)\]', rule)
@@ -57,5 +61,14 @@ def parse_ml_item(container):
         'name': img.get('title', img.get('alt', '')),
         'img': img.get('src', img.get('data-src', 'no-valid-img')),
         'price': '${}'.format(price.text)
+    }
+
+def parse_amzn_item(container):
+    img = search(container, 'div[class_="s-image-tall-aspect"].img')
+    price = search(container, 'span[class_="a-price"].span')
+    return {
+        'name': img.get('alt', ''),
+        'img': img.get('src', ''),
+        'price': price.text if price else  'N/A'
     }
 

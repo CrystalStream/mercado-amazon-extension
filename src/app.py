@@ -9,9 +9,10 @@ app = Flask(__name__)
 
 @app.route('/api/search')
 def search():
+    headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36'}
     query = request.args.get('q', '')
-    ml = requests.get(config.get_ml_url_for(query))
-    amzn = requests.get(config.get_amazon_url_for(query))
+    ml = requests.get(config.get_ml_url_for(query), headers=headers)
+    amzn = requests.get(config.get_amazon_url_for(query), headers=headers)
     ml_html = BeautifulSoup(ml.text, 'html.parser')
     amzn_html = BeautifulSoup(amzn.text, 'html.parser')
     results = best_offer.gather_results(ml_html, amzn_html)

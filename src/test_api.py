@@ -21,7 +21,7 @@ DATA_TEST = {
     }
 }
 
-def best_offer_mock_request(query):
+def best_offer_mock_request(query, headers):
     class MockResponse():
         def __init__(self, results):
             self.text = results
