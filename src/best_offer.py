@@ -104,7 +104,7 @@ def parse_item(container, store='ml'):
 
     return {
         'name': img.get('title', img.get('alt', '')),
-        'img': img.get('src', img.get('data-src', 'no-valid-img')),
+        'img': img.get('src', img.get('data-src', '')),
         'price': '${}'.format(price.text if price else 'N/A')
     }
 
