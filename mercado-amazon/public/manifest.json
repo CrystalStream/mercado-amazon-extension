@@ -1,0 +1,13 @@
+{
+  "short_name": "MLAMNZ",
+  "name": "MercadoAmazon",
+  "manifest_version": 2,
+  "author": "Christofer Flores",
+  "version": "1.0.0",
+  "description": "Simple search app to search item on ML and AMZN.",
+  "browser_action": {
+    "default_popup": "./index.html",
+    "default_title": "MLAMZN"
+  },
+  "content_security_policy": "script-src 'self' 'sha256-5As4+3YpY62+l38PsxCEkjB1R4YtyktBtRScTJ3fyLU='; object-src 'self'"
+}

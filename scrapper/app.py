@@ -1,11 +1,13 @@
 from flask import Flask, request, jsonify
 from bs4 import BeautifulSoup
+from flask_cors import CORS
 import requests
 import config
 import best_offer
 
 """Create and configure an instance of the Flask application."""
 app = Flask(__name__)
+CORS(app)
 
 @app.route('/api/search')
 def search():
