@@ -23,12 +23,35 @@ function SearchInput(props) {
   )
 }
 
+function Product(props) {
+  const { product } = props
+
+  return (
+    <>
+      <li>
+        <img src={product.img} alt={product.name} />
+        <p>{ product.name }</p>
+        <span>{ product.price }</span>
+      </li>
+    </>
+  )
+}
+
 function ProductList(props) {
+  const [ mlProducts, amznProducts ] = props.products
+
   return <>
     <ul>
       {
-        props.products && props.products.map((e, i) => {
-          return <li key={i}>test</li>
+        mlProducts && mlProducts.map((e, i) => {
+          return <Product key={i} product={e}/>
+        })
+      }
+    </ul>
+    <ul>
+      {
+        amznProducts && amznProducts.map((e, i) => {
+          return <Product key={i} product={e}/>
         })
       }
     </ul>
@@ -39,16 +62,16 @@ function fetchProducts(searchCriteria) {
   if (!searchCriteria) return null
 
   return fetch('http://localhost:5000/api/search?q=' + searchCriteria)
-  .then(res => res.json())
-  .then(res => {
-    if (res.status_code === 200) {
-      return res.results
-    }
-    return []
-  })
-  .catch(err => {
-    return [{'message': err}]
-  })
+    .then(res => res.json())
+    .then(res => {
+      if (res.status_code === 200) {
+        return res.results
+      }
+      return []
+    })
+    .catch(err => {
+      return [{'message': err}]
+    })
 }
 
 function App() {
@@ -58,7 +81,7 @@ function App() {
   return (
     <div className="App">
       <SearchInput onChange={onUpdateCriteria} onClick={onUpdateProductList} criteria={searchCriteria} />
-      <ProductList products={products} />
+      <ProductList products={products || [[],[]]} />
     </div>
   );
 }
