@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react'
+import React, { useState, useCallback } from 'react'
 import './App.css'
 
 function SearchInput(props) {
@@ -51,21 +51,10 @@ function fetchProducts(searchCriteria) {
   })
 }
 
-function useProductSearch(searchCriteria) {
-  const [results, onResult] = useState(null)
-  useEffect(() => {
-    fetchProducts(searchCriteria, onResult)
-  }, [searchCriteria])
-
-  return {
-    products: results
-  }
-}
-
 function App() {
   const [ searchCriteria, onUpdateCriteria ] = useState('')
   const [ products, onUpdateProductList ] = useState(null)
-  console.log('App>products', products)
+
   return (
     <div className="App">
       <SearchInput onChange={onUpdateCriteria} onClick={onUpdateProductList} criteria={searchCriteria} />
