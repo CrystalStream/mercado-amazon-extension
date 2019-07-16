@@ -17,7 +17,7 @@ function Tabs(props) {
 
   return (
     <>
-    <div className="tabs is-fullwidth">
+    <div className="tabs is-fullwidth is-marginless">
       <ul>
         {tabItems}
       </ul>

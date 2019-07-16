@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import './App.css'
+import './App.scss'
 import { SearchInput, ProductList } from './components'
 
 const FIRST_DATA = [
@@ -29,22 +29,22 @@ const FIRST_DATA = [
     {
       img: "https://m.media-amazon.com/images/I/61m9dJ-xvtL._AC_UL320_.jpg",
       name: "WWOOR Últimas Cuarzo Reloj Hombres Analógica de Números Romanos Relojes de Pulsera De Acero Inoxidable Watch Men",
-      price: "$$589.99"
+      price: "$589.99"
     },
     {
       img: "https://m.media-amazon.com/images/I/71sczVES08L._AC_UL320_.jpg",
       name: "RORIOS Moda Mujer Relojes de Pulsera Calendario Dial Acero Inoxidable Relojes de Mujer Reloj de Dama",
-      price: "$$785.00"
+      price: "$785.00"
     },
     {
       img: "https://m.media-amazon.com/images/I/51p8BKV0WGL._AC_UL320_.jpg",
       name: "WWOOR Clásico Reloj de cuarzo para mujer Round Analog Watch Relojes Resistente al Agua Mujer",
-      price: "$$518.99"
+      price: "$518.99"
     },
     {
       img: "https://m.media-amazon.com/images/I/81o3020+ONL._AC_UL320_.jpg",
       name: "Seiko, Reloj para Hombre SNK809, Acero Inoxidable, Correa Negra",
-      price: "$$2,004.59"
+      price: "$2,004.59"
     }
   ]
 ]
@@ -56,11 +56,13 @@ function App() {
   return (
     <div className="App">
       <div className="container">
-        <section className="section">
+        <section className="section is-paddingless">
           <div className="header">
             <h2>Buscador</h2>
           </div>
-          <SearchInput onChange={onUpdateCriteria} onClick={onUpdateProductList} criteria={searchCriteria} />
+          <div className="section search-input-container">
+            <SearchInput onChange={onUpdateCriteria} onClick={onUpdateProductList} criteria={searchCriteria} />
+          </div>
           <ProductList products={products} />
         </section>
       </div>

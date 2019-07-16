@@ -20,7 +20,7 @@ function SearchInput(props) {
   return (
     <>
       <div className="input-search-container">
-        <form onSubmit={e => { e.preventDefault(); getProducts()} } noValidate>
+        <form onSubmit={e => { e.preventDefault(); getProducts() } } noValidate>
           <div className="field">
             <div className={`control ${isSending ? 'is-loading' : ''}`}>
               <input

@@ -1,0 +1,68 @@
+.search-input-container {
+  padding: 0 1.5rem 1rem;
+}
+
+
+.App {
+  text-align: center;
+  box-sizing: border-box;
+  max-width: 450px;
+  width: 450px;
+  
+  .container {
+    border: 1px solid #2F2C40;
+  }
+
+  .header {
+    background: #141E30;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #243B55, #141E30);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    margin-bottom: 1rem;
+    padding: 1.5rem;
+    color: white;
+  }
+}
+
+/**
+Mercado Libre Product
+*/
+.ml-container {
+  background: #eee;
+  padding-top: .5rem;
+  border-radius: 4px;
+  font-family: 'Raleway', sans-serif;
+
+  ul {
+    height: 540px;
+    max-height: 540px;
+  
+    li {
+      padding: 1.5rem 0;
+      background: white;
+      box-shadow: 0 1px 1px 0 rgba(0,0,0,.1), 0 -1px 2px 0 rgba(0,0,0,.1);
+      border-radius: 4px;
+      width: 95%;
+      margin: 5px auto;
+      transition: .2s;
+      cursor: pointer;
+  
+      &:hover {
+        box-shadow: 0 0px 2px 0 rgb(0, 0, 0), 0 -1px 2px 0 rgba(0, 0, 0, 0.1);
+      }
+
+      .media-content {
+        .title {
+          font-weight: 300;
+        }
+
+        .subtitle {
+          font-weight: 700;
+        }
+      }
+    }
+  }
+
+  .product-tile {
+    padding-left: 1rem;
+  }
+}

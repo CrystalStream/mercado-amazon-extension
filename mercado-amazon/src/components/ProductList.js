@@ -7,20 +7,15 @@ function ProductList(props) {
 
   return <>
     <Tabs titles={['Mercado Libre', 'Amazon']}>
-      <ul>
-        {
-          mlProducts && mlProducts.map((e, i) => {
-            return <Product key={i} product={e}/>
-          })
-        }
-      </ul>
-      <ul>
-        {
-          amznProducts && amznProducts.map((e, i) => {
-            return <Product key={i} product={e}/>
-          })
-        }
-      </ul>
+      <div className="ml-container">
+        <ul>
+          {
+            mlProducts && mlProducts.map((e, i) => {
+              return <Product key={i} product={e}/>
+            })
+          }
+        </ul>
+      </div>
     </Tabs>
   </>
 }
