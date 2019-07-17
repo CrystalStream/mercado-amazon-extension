@@ -1,13 +1,18 @@
 {
-  "short_name": "MLAMNZ",
+  "short_name": "MercAmz",
   "name": "MercadoAmazon",
   "manifest_version": 2,
   "author": "Christofer Flores",
   "version": "1.0.0",
-  "description": "Simple search app to search item on ML and AMZN.",
+  "description": "Simple extions to search over amazon and mercadolibre websites",
   "browser_action": {
     "default_popup": "./index.html",
-    "default_title": "MLAMZN"
+    "default_title": "MercAmz"
+  },
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
   },
   "content_security_policy": "script-src 'self' 'sha256-5As4+3YpY62+l38PsxCEkjB1R4YtyktBtRScTJ3fyLU='; object-src 'self'"
 }
