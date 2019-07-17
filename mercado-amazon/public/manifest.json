@@ -1,13 +1,13 @@
 {
-  "short_name": "MercAmz",
-  "name": "MercadoAmazon",
+  "short_name": "BO",
+  "name": "Best Offer - Search & compare products",
   "manifest_version": 2,
   "author": "Christofer Flores",
   "version": "1.0.0",
-  "description": "Simple extions to search over amazon and mercadolibre websites",
+  "description": "Chrome extension that scrap both 'MercadoLibre' & 'Amazon' pages search result page.",
   "browser_action": {
     "default_popup": "./index.html",
-    "default_title": "MercAmz"
+    "default_title": "Best Offer"
   },
   "icons": {
     "16": "icon16.png",
