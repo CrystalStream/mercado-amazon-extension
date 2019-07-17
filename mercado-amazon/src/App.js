@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './App.scss'
 import { SearchInput, ProductList } from './components'
-import Logo from './assets/img/logo.png'
+import Header from './components/ui/Header'
 
 const FIRST_DATA = [
   [
@@ -67,23 +67,24 @@ const FIRST_DATA = [
 
 function App() {
   const [ searchCriteria, onUpdateCriteria ] = useState('')
-  const [ products, onUpdateProductList ] = useState(FIRST_DATA)
+  const [ loading, setLoading ] = useState(false)
+  const [ products, onUpdateProductList ] = useState([[],[]])
 
   return (
     <div className="App">
       <div className="container">
         <section className="section is-paddingless">
-          <div className="header">
-            <img src={Logo} alt="Choose the best offer" />
-            <div className="pull-right">
-              <span>v1.0.0</span>
-              <span>with <span role="img" aria-label="love">❤️</span> by <a href="https://github.com/CrystalStream">CrystalStream</a></span>
-            </div>
-          </div>
+          <Header />
           <div className="section search-input-container">
-            <SearchInput onChange={onUpdateCriteria} onClick={onUpdateProductList} criteria={searchCriteria} />
+            <SearchInput
+              onChange={onUpdateCriteria}
+              onUpdateProducts={onUpdateProductList}
+              criteria={searchCriteria}
+              isLoading={loading}
+              setLoading={setLoading}
+              />
           </div>
-          <ProductList products={products} />
+          <ProductList products={products} isLoading={loading} />
         </section>
       </div>
     </div>

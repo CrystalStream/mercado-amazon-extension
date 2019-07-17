@@ -7,10 +7,12 @@ function fetchProducts(searchCriteria) {
       if (res.status_code === 200) {
         return res.results
       }
-      return []
+      console.error('Error[404] fetching products: ', res)
+      return [[],[]]
     })
     .catch(err => {
-      return [{'message': err}]
+      console.error('Error[500] fetching products: ', err)
+      return [[],[]]
     })
 }
 

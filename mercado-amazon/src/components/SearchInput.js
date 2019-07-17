@@ -2,27 +2,31 @@ import React, { useState, useCallback } from 'react'
 import utils from '../utils'
 
 function SearchInput(props) {
-  const [isSending, setIsSending] = useState(false)
-  const { criteria, onClick } = props
+  const { criteria, onUpdateProducts, setLoading, isLoading } = props
 
   const getProducts = useCallback(async () => {
     // don't send again while we are sending
-    if (isSending) return
+    if (isLoading) return
     // update state
-    setIsSending(true)
+    setLoading(true)
     // send the actual request
-    const products = await utils.fetchProducts(criteria)
-    onClick(products)
+    let products = await utils.fetchProducts(criteria)
+
+    if (!products) {
+      products = [[], []]
+    }
+    
+    onUpdateProducts(products)
     // once the request is sent, update state again
-    setIsSending(false)
-  }, [isSending, criteria, onClick])
+    setLoading(false)
+  }, [isLoading, criteria, setLoading])
 
   return (
     <>
       <div className="input-search-container">
         <form onSubmit={e => { e.preventDefault(); getProducts() } } noValidate>
           <div className="field">
-            <div className={`control ${isSending ? 'is-loading' : ''}`}>
+            <div className={`control ${isLoading ? 'is-loading' : ''}`}>
               <input
                 className="input is-rounded"
                 type="text"

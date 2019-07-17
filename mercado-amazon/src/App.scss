@@ -2,6 +2,147 @@
   padding: 0 1.5rem 1rem;
 }
 
+.no-results-container {
+
+  img {
+    position: absolute;
+    bottom: 7rem;
+    left: 7rem;
+  }
+
+  &.lds-grid {
+    display: inline-block;
+    width: 64px;
+    height: 64px;
+    position: absolute;
+    bottom: 15rem;
+    left: 11.5rem;
+
+    &:after {
+      content: "Cargando...";
+      position: relative;
+      top: 4rem;
+      right: 4px;
+    }
+
+    div {
+      position: absolute;
+      width: 13px;
+      height: 13px;
+      border-radius: 50%;
+      background:rgb(141, 141, 141);
+      animation: lds-grid 1.2s linear infinite;
+
+      @for $i from 1 through 10 {
+        &:nth-child(#{$i}) {
+          @if $i == 1 {
+            top: 6px;
+            left: 6px;
+            animation-delay: 0s;
+            
+          } @else if $i == 2 {
+            top: 6px;
+            left: 26px;
+            animation-delay: -0.4s;
+          } @else if $i == 3 {
+            top: 6px;
+            left: 45px;
+            animation-delay: -0.8s;
+          } @else if $i == 4 {
+            top: 26px;
+            left: 6px;
+            animation-delay: -0.4s;
+          } @else if $i == 5 {
+            top: 26px;
+            left: 26px;
+            animation-delay: -0.8s;
+          } @else if $i == 6 {
+            top: 26px;
+            left: 45px;
+            animation-delay: -1.2s;
+          } @else if $i == 7 {
+            top: 45px;
+            left: 6px;
+            animation-delay: -0.8s;
+          } @else if $i == 8 {
+            top: 45px;
+            left: 26px;
+            animation-delay: -1.2s;
+          } @else if $i == 9 {
+            top: 45px;
+            left: 45px;
+            animation-delay: -1.6s;
+          }
+        }
+      }
+    }
+
+
+  }
+  // &.lds-grid div {
+  //   position: absolute;
+  //   width: 13px;
+  //   height: 13px;
+  //   border-radius: 50%;
+  //   background: rgb(141, 141, 141);
+  //   animation: lds-grid 1.2s linear infinite;
+  // }
+  // &.lds-grid div:nth-child(1) {
+  //   top: 6px;
+  //   left: 6px;
+  //   animation-delay: 0s;
+  // }
+  // &.lds-grid div:nth-child(2) {
+  //   top: 6px;
+  //   left: 26px;
+  //   animation-delay: -0.4s;
+  // }
+  // &.lds-grid div:nth-child(3) {
+  //   top: 6px;
+  //   left: 45px;
+  //   animation-delay: -0.8s;
+  // }
+  // &.lds-grid div:nth-child(4) {
+  //   top: 26px;
+  //   left: 6px;
+  //   animation-delay: -0.4s;
+  // }
+  // &.lds-grid div:nth-child(5) {
+  //   top: 26px;
+  //   left: 26px;
+  //   animation-delay: -0.8s;
+  // }
+  // &.lds-grid div:nth-child(6) {
+  //   top: 26px;
+  //   left: 45px;
+  //   animation-delay: -1.2s;
+  // }
+  // &.lds-grid div:nth-child(7) {
+  //   top: 45px;
+  //   left: 6px;
+  //   animation-delay: -0.8s;
+  // }
+  // &.lds-grid div:nth-child(8) {
+  //   top: 45px;
+  //   left: 26px;
+  //   animation-delay: -1.2s;
+  // }
+  // &.lds-grid div:nth-child(9) {
+  //   top: 45px;
+  //   left: 45px;
+  //   animation-delay: -1.6s;
+  // }
+
+  @keyframes lds-grid {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+  
+}
 
 .App {
   text-align: center;
@@ -64,16 +205,16 @@
 /**
 Mercado Libre Product
 */
-.ml-container {
+.products-container {
   background: #eee;
   padding-top: .5rem;
   border-radius: 4px;
   font-family: 'Raleway', sans-serif;
   overflow: auto;
+  max-height: 386px;
 
   ul {
-    height: 540px;
-    max-height: 540px;
+    height: auto;
   
     li {
       padding: 1.5rem 0;
