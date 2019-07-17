@@ -45,8 +45,8 @@ def search(container, rules):
     
     while len(rules) > 1:
         search_criteria = get_search_criteria(rules[0])
-        if 'criteria' in search_criteria:
-            parent = container.find(search_criteria['rule'], **search_criteria['criteria'])
+        if 'filter' in search_criteria:
+            parent = container.find(search_criteria['rule'], **search_criteria['filter'])
         else:
             parent = container.find(search_criteria['rule'])
 
@@ -63,8 +63,8 @@ def search(container, rules):
 
 
     search_criteria = get_search_criteria(rules[0])
-    if 'criteria' in search_criteria:
-        return container.find(search_criteria['rule'], **search_criteria['criteria'])
+    if 'filter' in search_criteria:
+        return container.find(search_criteria['rule'], **search_criteria['filter'])
     else:
         return container.find(search_criteria['rule'])
 
@@ -84,7 +84,7 @@ def get_search_criteria(rule):
         rule = rule.replace('[{}]'.format(attrs[0]), '')
         return {
             'rule': rule,
-            'criteria': { attr: value.strip('\"') }
+            'filter': { attr: value.strip('\"') }
         }
 
     return {
@@ -92,7 +92,7 @@ def get_search_criteria(rule):
     }
 
 def parse_item(container, store='ml'):
-    img_selector = 'ul.li.img'
+    img_selector = 'div[class_="item__image"].a.img'
     price_selector = 'div[class_="item__info"].div[class_="item__price"].span[class_="price__fraction"]'
 
     if store == 'amzn':

@@ -18,7 +18,10 @@ DATA_TEST = {
     },
     'test_four': {
         'query': 'Tablas de surf',
-    }
+    },
+    'test_five': {
+        'query': 'Playstation',
+    },
 }
 
 def best_offer_mock_request(query, headers):
@@ -32,6 +35,7 @@ def best_offer_mock_request(query, headers):
         config.get_amazon_url_for(DATA_TEST['test_three']['query']): MockResponse(DATA_TEST['test_three']['results']),
         config.get_ml_url_for(DATA_TEST['test_four']['query']): MockResponse(fixtures.ML_TEST_1),
         config.get_amazon_url_for(DATA_TEST['test_four']['query']): MockResponse(fixtures.AMZN_TEST_1),
+        config.get_ml_url_for(DATA_TEST['test_five']['query']): MockResponse(fixtures.ML_TEST_2),
     }
     return switcher.get(query, MockResponse(''))
 
@@ -60,6 +64,18 @@ class AppTest(unittest.TestCase):
     @mock.patch('app.requests.get', side_effect=best_offer_mock_request)
     def test_search_result_ml(self, mock_get):
         query = DATA_TEST['test_two']['query']
+        req = self.client.get('/api/search?q={}'.format(query)).get_json()
+        code = req['status_code']
+        data = req['results']
+
+        self.assertEqual(code, 200)
+        self.assertEqual(len(data), 2)
+        self.assertEqual(len(data[0]), 3)
+        self.assertEqual(len(data[1]), 0)
+
+    @mock.patch('app.requests.get', side_effect=best_offer_mock_request)
+    def test_search_result_ml_second_layout(self, mock_get):
+        query = DATA_TEST['test_five']['query']
         req = self.client.get('/api/search?q={}'.format(query)).get_json()
         code = req['status_code']
         data = req['results']

@@ -201,6 +201,152 @@ ML_TEST_1 = """
 </ol>
 """
 
+ML_TEST_2 = """
+<ol id="searchResults" class="section search-results list-view stack search-results-core search-results-std list--has-row-logos list--has-fulfillment" imgtype="listingLightweight">
+    <li class="results-item highlighted article stack product ">
+        <div class="rowItem item highlighted item--stack item--has-row-logo new with-reviews to-item " id="MLM670729657">
+            <div class="item__image item__image--stack">
+                <div class="images-viewer" item-url="https://articulo.mercadolibre.com.mx/MLM-670729657-consola-sony-playstation-classic-ps1-20-juegos-hdmi-nuevo-_JM" item-id="MLM670729657">
+                    <div class="image-content">
+                        <a href="https://articulo.mercadolibre.com.mx/MLM-670729657-consola-sony-playstation-classic-ps1-20-juegos-hdmi-nuevo-_JM" class="figure item-image item__js-link"> <img class="lazy-load" width="160" height="160" alt="Consola Sony Playstation Classic Ps1 20 Juegos Hdmi Nuevo" src="https://http2.mlstatic.com/consola-sony-playstation-classic-ps1-20-juegos-hdmi-nuevo-D_NQ_NP_670272-MLM31238679865_062019-V.webp"> </a>
+                    </div>
+                </div>
+            </div>
+            <div class="item__info-container highlighted ">
+                <div class="item__info item--hide-right-col ">
+                    <h2 class="item__title list-view-item-title"> <a href="https://articulo.mercadolibre.com.mx/MLM-670729657-consola-sony-playstation-classic-ps1-20-juegos-hdmi-nuevo-_JM" class="item__info-title"> <span class="main-title"> Consola Sony Playstation Classic Ps1 20 Juegos Hdmi Nuevo </span> </a> <div class="item__brand"> <a class="item__brand-link" href="https://tienda.mercadolibre.com.mx/laptop-mexico"> <span class="item__brand-title-tos"> por Laptop México </span> </a> </div></h2>
+                    <div class="price__container">
+                        <div class="item__price "> <span class="price__symbol">$</span> <span class="price__fraction">999</span></div>
+                    </div>
+                    <div class="item__stack_column highlighted">
+                        <div class="item__stack_column__info">
+                            <div class="stack_column_item installments highlighted"><span class="item-installments free-interest"> <span class="item-installments-multiplier"> 18x </span> <span class="item-installments-price"> $ 55 <sup class="installment__decimals">50</sup> </span> <span class="item-installments-interest"> sin interés </span></span>
+                            </div>
+                            <div class="stack_column_item shipping highlighted">
+                                <div class="item__shipping highlighted free-shipping item--has-fulfillment">
+                                    <p class="next_day">Llega gratis mañana</p>
+                                </div>
+                            </div>
+                            <div class="stack_column_item status">
+                                <div class="item__status">
+                                    <div class="item__condition"> 151 vendidos </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="stack_colum_right without-attributes without-reviews">
+                        <div class="stack_column_right__bottom "> </div>
+                    </div>
+                </div>
+            </div>
+            <form class="item__bookmark-form" action="/search/bookmarks/MLM670729657/make" method="post" id="bookmarkForm">
+                <button type="submit" class="bookmarks favorite " data-id="MLM670729657">
+                    <div class="item__bookmark">
+                        <div class="icon"></div>
+                    </div>
+                </button>
+                <input type="hidden" name="method" value="add">
+                <input type="hidden" name="itemId" value="MLM670729657">
+            </form>
+        </div>
+    </li>
+    <li class="results-item highlighted article stack product ">
+        <div class="rowItem item highlighted item--stack item--has-row-logo new with-reviews to-item " id="MLM670729657">
+            <div class="item__image item__image--stack">
+                <div class="images-viewer" item-url="https://articulo.mercadolibre.com.mx/MLM-670729657-consola-sony-playstation-classic-ps1-20-juegos-hdmi-nuevo-_JM" item-id="MLM670729657">
+                    <div class="image-content">
+                        <a href="https://articulo.mercadolibre.com.mx/MLM-670729657-consola-sony-playstation-classic-ps1-20-juegos-hdmi-nuevo-_JM" class="figure item-image item__js-link"> <img class="lazy-load" width="160" height="160" alt="Consola Sony Playstation Classic Ps1 20 Juegos Hdmi Nuevo" src="https://http2.mlstatic.com/consola-sony-playstation-classic-ps1-20-juegos-hdmi-nuevo-D_NQ_NP_670272-MLM31238679865_062019-V.webp"> </a>
+                    </div>
+                </div>
+            </div>
+            <div class="item__info-container highlighted ">
+                <div class="item__info item--hide-right-col ">
+                    <h2 class="item__title list-view-item-title"> <a href="https://articulo.mercadolibre.com.mx/MLM-670729657-consola-sony-playstation-classic-ps1-20-juegos-hdmi-nuevo-_JM" class="item__info-title"> <span class="main-title"> Consola Sony Playstation Classic Ps1 20 Juegos Hdmi Nuevo </span> </a> <div class="item__brand"> <a class="item__brand-link" href="https://tienda.mercadolibre.com.mx/laptop-mexico"> <span class="item__brand-title-tos"> por Laptop México </span> </a> </div></h2>
+                    <div class="price__container">
+                        <div class="item__price "> <span class="price__symbol">$</span> <span class="price__fraction">999</span></div>
+                    </div>
+                    <div class="item__stack_column highlighted">
+                        <div class="item__stack_column__info">
+                            <div class="stack_column_item installments highlighted"><span class="item-installments free-interest"> <span class="item-installments-multiplier"> 18x </span> <span class="item-installments-price"> $ 55 <sup class="installment__decimals">50</sup> </span> <span class="item-installments-interest"> sin interés </span></span>
+                            </div>
+                            <div class="stack_column_item shipping highlighted">
+                                <div class="item__shipping highlighted free-shipping item--has-fulfillment">
+                                    <p class="next_day">Llega gratis mañana</p>
+                                </div>
+                            </div>
+                            <div class="stack_column_item status">
+                                <div class="item__status">
+                                    <div class="item__condition"> 151 vendidos </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="stack_colum_right without-attributes without-reviews">
+                        <div class="stack_column_right__bottom "> </div>
+                    </div>
+                </div>
+            </div>
+            <form class="item__bookmark-form" action="/search/bookmarks/MLM670729657/make" method="post" id="bookmarkForm">
+                <button type="submit" class="bookmarks favorite " data-id="MLM670729657">
+                    <div class="item__bookmark">
+                        <div class="icon"></div>
+                    </div>
+                </button>
+                <input type="hidden" name="method" value="add">
+                <input type="hidden" name="itemId" value="MLM670729657">
+            </form>
+        </div>
+    </li>
+    <li class="results-item highlighted article stack product ">
+        <div class="rowItem item highlighted item--stack item--has-row-logo new with-reviews to-item " id="MLM670729657">
+            <div class="item__image item__image--stack">
+                <div class="images-viewer" item-url="https://articulo.mercadolibre.com.mx/MLM-670729657-consola-sony-playstation-classic-ps1-20-juegos-hdmi-nuevo-_JM" item-id="MLM670729657">
+                    <div class="image-content">
+                        <a href="https://articulo.mercadolibre.com.mx/MLM-670729657-consola-sony-playstation-classic-ps1-20-juegos-hdmi-nuevo-_JM" class="figure item-image item__js-link"> <img class="lazy-load" width="160" height="160" alt="Consola Sony Playstation Classic Ps1 20 Juegos Hdmi Nuevo" src="https://http2.mlstatic.com/consola-sony-playstation-classic-ps1-20-juegos-hdmi-nuevo-D_NQ_NP_670272-MLM31238679865_062019-V.webp"> </a>
+                    </div>
+                </div>
+            </div>
+            <div class="item__info-container highlighted ">
+                <div class="item__info item--hide-right-col ">
+                    <h2 class="item__title list-view-item-title"> <a href="https://articulo.mercadolibre.com.mx/MLM-670729657-consola-sony-playstation-classic-ps1-20-juegos-hdmi-nuevo-_JM" class="item__info-title"> <span class="main-title"> Consola Sony Playstation Classic Ps1 20 Juegos Hdmi Nuevo </span> </a> <div class="item__brand"> <a class="item__brand-link" href="https://tienda.mercadolibre.com.mx/laptop-mexico"> <span class="item__brand-title-tos"> por Laptop México </span> </a> </div></h2>
+                    <div class="price__container">
+                        <div class="item__price "> <span class="price__symbol">$</span> <span class="price__fraction">999</span></div>
+                    </div>
+                    <div class="item__stack_column highlighted">
+                        <div class="item__stack_column__info">
+                            <div class="stack_column_item installments highlighted"><span class="item-installments free-interest"> <span class="item-installments-multiplier"> 18x </span> <span class="item-installments-price"> $ 55 <sup class="installment__decimals">50</sup> </span> <span class="item-installments-interest"> sin interés </span></span>
+                            </div>
+                            <div class="stack_column_item shipping highlighted">
+                                <div class="item__shipping highlighted free-shipping item--has-fulfillment">
+                                    <p class="next_day">Llega gratis mañana</p>
+                                </div>
+                            </div>
+                            <div class="stack_column_item status">
+                                <div class="item__status">
+                                    <div class="item__condition"> 151 vendidos </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="stack_colum_right without-attributes without-reviews">
+                        <div class="stack_column_right__bottom "> </div>
+                    </div>
+                </div>
+            </div>
+            <form class="item__bookmark-form" action="/search/bookmarks/MLM670729657/make" method="post" id="bookmarkForm">
+                <button type="submit" class="bookmarks favorite " data-id="MLM670729657">
+                    <div class="item__bookmark">
+                        <div class="icon"></div>
+                    </div>
+                </button>
+                <input type="hidden" name="method" value="add">
+                <input type="hidden" name="itemId" value="MLM670729657">
+            </form>
+        </div>
+    </li>
+</ol>
+"""
+
 AMZN_TEST_1 = """
 <div class="s-result-list s-search-results sg-row">
     <div data-asin="B000GAWSHM" data-index="0" class="sg-col-4-of-24 sg-col-4-of-12 sg-col-4-of-36 s-result-item sg-col-4-of-28 sg-col-4-of-16 sg-col sg-col-4-of-20 sg-col-4-of-32" data-cel-widget="search_result_0">
