@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import './App.scss'
 import { SearchInput, ProductList } from './components'
+import Header from './components/ui/Header'
 
 const FIRST_DATA = [
   [
@@ -66,19 +67,24 @@ const FIRST_DATA = [
 
 function App() {
   const [ searchCriteria, onUpdateCriteria ] = useState('')
-  const [ products, onUpdateProductList ] = useState(FIRST_DATA)
+  const [ loading, setLoading ] = useState(false)
+  const [ products, onUpdateProductList ] = useState([[],[]])
 
   return (
     <div className="App">
       <div className="container">
         <section className="section is-paddingless">
-          <div className="header">
-            <h2>Buscador</h2>
-          </div>
+          <Header />
           <div className="section search-input-container">
-            <SearchInput onChange={onUpdateCriteria} onClick={onUpdateProductList} criteria={searchCriteria} />
+            <SearchInput
+              onChange={onUpdateCriteria}
+              onUpdateProducts={onUpdateProductList}
+              criteria={searchCriteria}
+              isLoading={loading}
+              setLoading={setLoading}
+              />
           </div>
-          <ProductList products={products} />
+          <ProductList products={products} isLoading={loading} />
         </section>
       </div>
     </div>
