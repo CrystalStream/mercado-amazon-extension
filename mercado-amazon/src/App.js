@@ -3,6 +3,8 @@ import './App.scss'
 import { SearchInput, ProductList } from './components'
 import Header from './components/ui/Header'
 
+/*global chrome*/
+
 const FIRST_DATA = [
   [
     {

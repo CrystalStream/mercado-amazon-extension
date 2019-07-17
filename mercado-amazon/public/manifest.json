@@ -14,5 +14,8 @@
     "48": "icon48.png",
     "128": "icon128.png"
   },
+  "permissions": [
+    "tabs"
+  ],
   "content_security_policy": "script-src 'self' 'sha256-5As4+3YpY62+l38PsxCEkjB1R4YtyktBtRScTJ3fyLU='; object-src 'self'"
 }

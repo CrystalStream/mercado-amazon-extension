@@ -16,6 +16,13 @@ function fetchProducts(searchCriteria) {
     })
 }
 
+function openTab(url) {
+  if (!window.chrome.tabs) return
+  
+  window.chrome.tabs.create({ url })
+}
+
 export default {
-  fetchProducts
+  fetchProducts,
+  openTab
 }
