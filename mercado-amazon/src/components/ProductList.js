@@ -23,6 +23,7 @@ function ProductList(props) {
             return <Product key={i} product={e}/>
           })
         }
+        <div id="portal" className="portal" />
       </ul> : <NoResults /> 
   }
   
