@@ -6,8 +6,8 @@ import NoResults from './ui/NoResults'
 import Loading from './ui/Loading'
 
 function ProductList(props) {
-  const [ mlProducts, amznProducts ] = props.products
   const [ selectedIndex, setSelected ] = useState(0)
+  const products = props.products[selectedIndex]
   const titles = [
     <Logo to="ml" height="40" width="40" />,
     <Logo to="amazon" height="70" width="70" />
@@ -16,18 +16,16 @@ function ProductList(props) {
   function getContent() {
     if (props.isLoading) return <Loading />
 
-    return mlProducts && mlProducts.length ? 
+    return products && products.length ? 
       <ul>
         {
-          mlProducts.map((e, i) => {
+          products.map((e, i) => {
             return <Product key={i} product={e}/>
           })
         }
       </ul> : <NoResults /> 
   }
-
-  console.log('props.isLoading', props.isLoading)
-
+  
   return <>
     <Tabs titles={titles} selectedIndex={selectedIndex} onClick={setSelected}>
       <div className="products-container">
