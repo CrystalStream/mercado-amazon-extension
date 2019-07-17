@@ -23,6 +23,16 @@ const FIRST_DATA = [
       img: "https://http2.mlstatic.com/reloj-led-digital-pantalla-tactil-de-moda-deporte-D_NQ_NP_693327-MLM31226710670_062019-Q.webp",
       name: "Reloj Led Digital Pantalla Tactil De Moda Deporte",
       price: "$39"
+    },
+    {
+      img: "https://m.media-amazon.com/images/I/81o3020+ONL._AC_UL320_.jpg",
+      name: "Seiko, Reloj para Hombre SNK809, Acero Inoxidable, Correa Negra",
+      price: "$2,004.59"
+    },
+    {
+      img: "https://m.media-amazon.com/images/I/81o3020+ONL._AC_UL320_.jpg",
+      name: "Seiko, Reloj para Hombre SNK809, Acero Inoxidable, Correa Negra",
+      price: "$2,004.59"
     }
   ],
   [
@@ -40,6 +50,11 @@ const FIRST_DATA = [
       img: "https://m.media-amazon.com/images/I/51p8BKV0WGL._AC_UL320_.jpg",
       name: "WWOOR Clásico Reloj de cuarzo para mujer Round Analog Watch Relojes Resistente al Agua Mujer",
       price: "$518.99"
+    },
+    {
+      img: "https://m.media-amazon.com/images/I/81o3020+ONL._AC_UL320_.jpg",
+      name: "Seiko, Reloj para Hombre SNK809, Acero Inoxidable, Correa Negra",
+      price: "$2,004.59"
     },
     {
       img: "https://m.media-amazon.com/images/I/81o3020+ONL._AC_UL320_.jpg",
