@@ -10,7 +10,11 @@
   width: 450px;
   
   .container {
-    border: 1px solid #2F2C40;
+    border: 1px solid #DEE7E3;
+    box-shadow: 1px 1px 3px #ADAFB7;
+    max-height: 600px;
+    height: 600px;
+    overflow: hidden;
   }
 
   .header {
@@ -18,8 +22,42 @@
     background: -webkit-linear-gradient(to right, #243B55, #141E30);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     margin-bottom: 1rem;
-    padding: 1.5rem;
+    padding-left: 1.5rem;
     color: white;
+    text-align: left;
+
+    img {
+      width: 5rem;
+      height: 5rem;
+    }
+
+    .pull-right {
+      text-align: right;
+      width: 16rem;
+      float: right;
+      position: absolute;
+      right: .5rem;
+      top: 3.5rem;
+      font-size: 9px;
+
+      span:not([role="img"]) {
+        display: block;
+
+        a {
+          color: #f3f3f3;
+          text-decoration: underline;
+          transition: .3s;
+
+          &:hover {
+            color: #F2E291;
+          }
+        }
+      }
+    }
+  }
+
+  .tabs.is-boxed a:hover {
+    background: #fefefe;
   }
 }
 
@@ -59,7 +97,7 @@ Mercado Libre Product
         .subtitle {
           font-weight: 700;
         }
-      }
+      } 
     }
   }
 

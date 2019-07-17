@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import './App.scss'
 import { SearchInput, ProductList } from './components'
+import Logo from './assets/img/logo.png'
 
 const FIRST_DATA = [
   [
@@ -73,7 +74,11 @@ function App() {
       <div className="container">
         <section className="section is-paddingless">
           <div className="header">
-            <h2>Buscador</h2>
+            <img src={Logo} alt="Choose the best offer" />
+            <div className="pull-right">
+              <span>v1.0.0</span>
+              <span>with <span role="img" aria-label="love">❤️</span> by <a href="https://github.com/CrystalStream">CrystalStream</a></span>
+            </div>
           </div>
           <div className="section search-input-container">
             <SearchInput onChange={onUpdateCriteria} onClick={onUpdateProductList} criteria={searchCriteria} />
