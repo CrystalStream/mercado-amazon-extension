@@ -18,6 +18,10 @@ function fetchProducts(searchCriteria) {
 
 function openTab(url) {
   if (!window.chrome.tabs) return
+
+  if (!/mercadolibre/.test(url)) {
+    url = 'https://www.amazon.com.mx' + url
+  }
   
   window.chrome.tabs.create({ url })
 }
