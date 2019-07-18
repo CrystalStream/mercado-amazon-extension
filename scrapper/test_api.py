@@ -18,7 +18,13 @@ DATA_TEST = {
     },
     'test_four': {
         'query': 'Tablas de surf',
-    }
+    },
+    'test_five': {
+        'query': 'Playstation',
+    },
+    'test_six': {
+        'query': 'Xbox',
+    },
 }
 
 def best_offer_mock_request(query, headers):
@@ -32,6 +38,8 @@ def best_offer_mock_request(query, headers):
         config.get_amazon_url_for(DATA_TEST['test_three']['query']): MockResponse(DATA_TEST['test_three']['results']),
         config.get_ml_url_for(DATA_TEST['test_four']['query']): MockResponse(fixtures.ML_TEST_1),
         config.get_amazon_url_for(DATA_TEST['test_four']['query']): MockResponse(fixtures.AMZN_TEST_1),
+        config.get_ml_url_for(DATA_TEST['test_five']['query']): MockResponse(fixtures.ML_TEST_2),
+        config.get_amazon_url_for(DATA_TEST['test_six']['query']): MockResponse(fixtures.AMZN_TEST_2),
     }
     return switcher.get(query, MockResponse(''))
 
@@ -70,6 +78,18 @@ class AppTest(unittest.TestCase):
         self.assertEqual(len(data[1]), 0)
 
     @mock.patch('app.requests.get', side_effect=best_offer_mock_request)
+    def test_search_result_ml_second_layout(self, mock_get):
+        query = DATA_TEST['test_five']['query']
+        req = self.client.get('/api/search?q={}'.format(query)).get_json()
+        code = req['status_code']
+        data = req['results']
+
+        self.assertEqual(code, 200)
+        self.assertEqual(len(data), 2)
+        self.assertEqual(len(data[0]), 3)
+        self.assertEqual(len(data[1]), 0)
+
+    @mock.patch('app.requests.get', side_effect=best_offer_mock_request)
     def test_search_result_amzn(self, mock_get):
         query = DATA_TEST['test_three']['query']
         req = self.client.get('/api/search?q={}'.format(query)).get_json()
@@ -80,6 +100,18 @@ class AppTest(unittest.TestCase):
         self.assertEqual(len(data), 2)
         self.assertEqual(len(data[0]), 0)
         self.assertEqual(len(data[1]), 1)
+
+    @mock.patch('app.requests.get', side_effect=best_offer_mock_request)
+    def test_search_result_amzn_second_layout(self, mock_get):
+        query = DATA_TEST['test_six']['query']
+        req = self.client.get('/api/search?q={}'.format(query)).get_json()
+        code = req['status_code']
+        data = req['results']
+
+        self.assertEqual(code, 200)
+        self.assertEqual(len(data), 2)
+        self.assertEqual(len(data[0]), 0)
+        self.assertEqual(len(data[1]), 5)
     
     @mock.patch('app.requests.get', side_effect=best_offer_mock_request)
     def test_search_result_both(self, mock_get):

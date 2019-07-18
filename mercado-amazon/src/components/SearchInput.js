@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react'
+import React, { useCallback } from 'react'
 import utils from '../utils'
 
 function SearchInput(props) {
@@ -19,7 +19,7 @@ function SearchInput(props) {
     onUpdateProducts(products)
     // once the request is sent, update state again
     setLoading(false)
-  }, [isLoading, criteria, setLoading])
+  }, [isLoading, criteria, setLoading, onUpdateProducts])
 
   return (
     <>
