@@ -10,12 +10,14 @@ function Product(props) {
         <a onClick={() => { utils.openTab(product.url) }}>
           <div className="media product-tile">
             <div className="media-left">
-              <figure className="image is-48x48">
+              <figure className="image is-64x64">
               <MagnifyImg {...{
+                    imageClassName: 'product-img',
                     smallImage: {
                         alt: product.name,
-                        isFluidWidth: true,
                         src: product.img,
+                        width: 70,
+                        height: 85
                     },
                     largeImage: {
                         src: product.img,

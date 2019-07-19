@@ -60,7 +60,7 @@ const FIRST_DATA = [
       price: "$2,004.59"
     },
     {
-      img: "https://m.media-amazon.com/images/I/81o3020+ONL._AC_UL320_.jpg",
+      img: "https://m.media-amazon.com/images/I/51l8TIovftL._AC_UL320_.jpg",
       name: "Seiko, Reloj para Hombre SNK809, Acero Inoxidable, Correa Negra",
       price: "$2,004.59"
     }

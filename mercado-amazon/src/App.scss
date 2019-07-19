@@ -226,7 +226,7 @@ Mercado Libre Product
     height: auto;
   
     li {
-      padding: 1.5rem 0;
+      padding: 1.8rem 0;
       background: white;
       box-shadow: 0 1px 1px 0 rgba(0,0,0,.1), 0 -1px 2px 0 rgba(0,0,0,.1);
       border-radius: 4px;
@@ -253,5 +253,9 @@ Mercado Libre Product
 
   .product-tile {
     padding-left: 1rem;
+
+    .product-img {
+      object-fit: contain;
+    }
   }
 }
