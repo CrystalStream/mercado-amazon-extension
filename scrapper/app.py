@@ -25,8 +25,3 @@ def search():
 @app.route('/<path:path>')
 def catch_all(path):
     return jsonify({"results": "not found", "status_code": 404})
-
-
-
-if __name__ == '__main__':
-    best_offer_app()
