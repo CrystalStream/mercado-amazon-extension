@@ -90,7 +90,7 @@ function App() {
         </section>
       </div>
     </div>
-  );
+  )
 }
 
 export default App
