@@ -6,7 +6,7 @@ module_dir = os.path.dirname('..')
 sys.path.append(os.path.join(module_dir, '../scraper/'))
 
 from app import app
-import config
+import utils
 from fixtures import fixtures
 
 
@@ -40,13 +40,13 @@ def best_offer_mock_request(query, headers):
             self.text = results
 
     switcher = {
-        config.get_ml_url_for(DATA_TEST['test_one']['query']): MockResponse(''),
-        config.get_ml_url_for(DATA_TEST['test_two']['query']): MockResponse(DATA_TEST['test_two']['results']),
-        config.get_amazon_url_for(DATA_TEST['test_three']['query']): MockResponse(DATA_TEST['test_three']['results']),
-        config.get_ml_url_for(DATA_TEST['test_four']['query']): MockResponse(fixtures.ML_TEST_1),
-        config.get_amazon_url_for(DATA_TEST['test_four']['query']): MockResponse(fixtures.AMZN_TEST_1),
-        config.get_ml_url_for(DATA_TEST['test_five']['query']): MockResponse(fixtures.ML_TEST_2),
-        config.get_amazon_url_for(DATA_TEST['test_six']['query']): MockResponse(fixtures.AMZN_TEST_2),
+        utils.get_ml_url_for(DATA_TEST['test_one']['query']): MockResponse(''),
+        utils.get_ml_url_for(DATA_TEST['test_two']['query']): MockResponse(DATA_TEST['test_two']['results']),
+        utils.get_amazon_url_for(DATA_TEST['test_three']['query']): MockResponse(DATA_TEST['test_three']['results']),
+        utils.get_ml_url_for(DATA_TEST['test_four']['query']): MockResponse(fixtures.ML_TEST_1),
+        utils.get_amazon_url_for(DATA_TEST['test_four']['query']): MockResponse(fixtures.AMZN_TEST_1),
+        utils.get_ml_url_for(DATA_TEST['test_five']['query']): MockResponse(fixtures.ML_TEST_2),
+        utils.get_amazon_url_for(DATA_TEST['test_six']['query']): MockResponse(fixtures.AMZN_TEST_2),
     }
     return switcher.get(query, MockResponse(''))
 
