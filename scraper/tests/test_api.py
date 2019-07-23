@@ -1,8 +1,15 @@
+import os
+import sys
 import unittest
 from unittest import mock
+module_dir = os.path.dirname('..')
+sys.path.append(os.path.join(module_dir, '../scraper/'))
+
 from app import app
 import config
-import fixtures
+from fixtures import fixtures
+
+
 
 DATA_TEST = {
     'test_one': {
