@@ -1,10 +1,13 @@
 # Mercado-Amazon Extension - Scrapper
 
+<img src="./documentation/app_1.png" width="49%">
+<img src="./documentation/app_2.png" width="49%">
+
 This repo holds the scrapper and the extension that acts like a client for a flask app.
 
 ```
-- mercado-amazon <--- React Extension
-- scrapper <--- Flask app that do all the scrapping
+- mercado-amazon <--- Chrome Extension (built with React)
+- scraper <--- Flask app that do all the scrapping
 ```
 
 # Setup
@@ -13,9 +16,9 @@ This repo holds the scrapper and the extension that acts like a client for a fla
 
 It's a simple flask app that holds only one endpoint and do all the scrapping.
 
-You'll to install some python libs, and i highly recommend you to use [virtual envs]().
+You'll to install some python libs, and I highly recommend you to use [virtual envs]().
 
-First move to the `scrapper/` folder, once you're there, you can install the dependencies by running:
+First move to the `scraper/` folder, once you're there, you can install the dependencies by running:
 
 ```bash
 pip install -r requirements.txt
@@ -40,7 +43,7 @@ and you'll have a web server on your `localhost:5000`, any route other than `/ap
 To run the test:
 
 ```bash
-python test_api.py
+python tests/test_api.py
 ```
 
 
@@ -60,5 +63,6 @@ then you can running on your localhost with:
 npm start
 ```
 
-Or you can build the app and dropped on `chrome://extensions` and you can start using it
+Or you can **build** the app and dropp the `build/` folder in `chrome://extensions` and you can start using it
+
 > For local development you'll need to have both apps running.
